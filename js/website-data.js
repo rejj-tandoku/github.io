@@ -8,24 +8,43 @@ var websiteData = {
 			Pamorangon, Daet, <br>\
             Camarines Norte",
     personalDescription: "Experienced software engineer with a strong proficiency in web development technologies, adept at transforming innovative ideas into functional and visually appealing websites. Skilled in popular tools used with Javascript & PHP with a passion for clean code and user-centric design.",
+    // value should be divisible by 5 only
+    techSkills: [
+        {
+            language: 'LOGICAL THINKING',
+            value: '95'
+        },
+        {
+            language: 'PHP',
+            value: '95'
+        },
+        {
+            language: 'JAVASCRIPT',
+            value: '95'
+        },
+        {
+            language: 'HTML5 & CSS3',
+            value: '90'
+        }
+    ],
     workExperiences: [
         {
             jobTitle: "SOFTWARE ENGINEER",
-            date: "Apr 2022 - Present",
+            date: "April 2022 - Present",
             company: "MaroonStudios Inc.",
             description: "Design and develop server-side components for web and mobile applications. Collaborate with cross-functional teams to deliver high-quality software solutions. Use Google Cloud Platform services to utilize by/integrate to our systems. Conduct code reviews, debug and resolve issues, and stay updated with emerging technologies. Drive innovation through technical proficiency and teamwork.",
             logo: 'fa fa-briefcase'
         },
         {
             jobTitle: "COMPUTER PROGRAMMER / WEB DEVELOPER",
-            date: "Jul 2019 - Mar 2022",
+            date: "July 2019 - March 2022",
             company: "Camarines Norte State College",
             description: "Published different system currently being used by the institution namely Online Admission System, Medical & Dental Records System, Campus/Office Appointment, MIS Portal and AutoBackup for the automation of the backup of their databases.",
             logo: 'fa fa-briefcase'
         },
         {
             jobTitle: "WEB DEVELOPER (INTERN)",
-            date: "Jul 2018 - Oct 2018",
+            date: "July 2018 - October 2018",
             company: "CloudSwyft Global Systems, Inc.",
             description: "Joined the amazing team of web developers and helped in the development of a platform used to deliver Microsoft Products (powered by Microsoft Azure) to the clients by providing Virtual Machines readily accessible on-demand.",
             logo: 'fa fa-briefcase'
@@ -83,6 +102,16 @@ var loadData = function () {
     $(".mailTo").prop('href', 'mailto:' + websiteData.email);
     $(".telephoneTo").prop('href', 'tel:' + websiteData.mobileNumber);
     $("#pdfDownload").prop('href', "resources/" + websiteData.pdf);
+
+    techSkills = "";
+    websiteData.techSkills.forEach(skill => {
+        techSkills +=
+            `<li>
+                <div class="progress percent${skill.value}"><span>${skill.value}%</span></div>
+                <strong>${skill.language}</strong>
+            </li>`;
+    });
+    $(".techSkills").html(techSkills);
 
     workExperiences = "";
     websiteData.workExperiences.forEach(job => {
