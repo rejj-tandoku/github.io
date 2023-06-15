@@ -129,7 +129,6 @@ var loadData = function () {
                     <p>${job.description}</p>
                 </div>\
             </div>`;
-        console.log(workExperiences)
     });
     $(".workExperienceTimeline").html(workExperiences);
 
