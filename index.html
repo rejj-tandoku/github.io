@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="css/base.css">
 	<link rel="stylesheet" href="css/main.css">
 	<link rel="stylesheet" href="css/vendor.css">
+	<link rel="stylesheet" href="css/custom-menu.css">
 	<script src="js/modernizr.js"></script>
 	<script src="js/pace.min.js"></script>
 	<link rel="icon" type="image/png" href="favicon.png">
@@ -15,8 +16,27 @@
 
 <body id="top">
 	<!-- Menu Section -->
-	<header>
-		<div class="row">
+	<header id="header-container">
+
+		<div class="menu-container">
+			<nav class="menu" id="main-nav-wrap">
+				<div class="menu-button" style="padding-left: 15px;">
+					<div class="bar1"></div>
+					<div class="bar2"></div>
+					<div class="bar3"></div>
+				</div>
+				<ul class="menu-items main-navigation" style="margin:0px; list-style: none;">
+					<li><a class="smoothscroll" href="#about" title="">About</a></li>
+					<li><a class="smoothscroll" href="#workExperience" title="">Work Experience</a></li>
+					<li><a class="smoothscroll" href="#education" title="">Education</a></li>
+					<li><a class="smoothscroll" href="#personalDevelopment" title="">Personal Development</a></li>
+					<li><a class="smoothscroll" href="#contact" title="" style="margin-right: 15px;">Contact</a></li>
+				</ul>
+			</nav>
+
+
+		</div>
+		<!-- <div class="row">
 			<div class="top-bar">
 				<a class="menu-toggle" style="padding: 18px 0px;" href="#">
 					<div class="logo">
@@ -28,15 +48,15 @@
 				<nav id="main-nav-wrap">
 					<ul class="main-navigation">
 						<li class="current"><a class="smoothscroll" href="#intro" title="">Home</a></li>
-						<li><a class="smoothscroll" href="#about" title="">About</a></li>
-						<li><a class="smoothscroll" href="#workExperience" title="">Work Experience</a></li>
-						<li><a class="smoothscroll" href="#education" title="">Education</a></li>
-						<li><a class="smoothscroll" href="#personalDevelopment" title="">Personal Development</a></li>
-						<li><a class="smoothscroll" href="#contact" title="">Contact</a></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
 					</ul>
 				</nav>
 			</div>
-		</div>
+		</div> -->
 	</header>
 
 	<!-- Introduction -->
@@ -61,7 +81,6 @@
 		</ul>
 	</section>
 
-
 	<!-- About Me -->
 	<section id="about">
 		<div class="row section-intro">
@@ -74,7 +93,6 @@
 				</div>
 			</div>
 		</div>
-
 		<div class="row about-content">
 			<div class="col-six tab-full">
 				<h3 class="text-center">Profile</h3>
@@ -101,13 +119,11 @@
 					</li>
 				</ul>
 			</div>
-
 			<div class="col-six tab-full">
 				<h3 class="text-center">Skills</h3>
 				<ul class="skill-bars techSkills"></ul>
 			</div>
 		</div>
-
 		<div class="row button-section">
 			<div class="col-twelve">
 				<a id="pdfDownload" title="Download Resume" class="button button-primary" target="_blank"
@@ -117,7 +133,6 @@
 			</div>
 		</div>
 	</section>
-
 
 	<!-- Work Experience -->
 	<section id="workExperience" class="grey-section timeline-layout">
@@ -156,7 +171,7 @@
 	</section>
 
 	<!-- Contact -->
-	<section id="contact">
+	<section id="contact" style="padding-bottom: 185px">
 		<div class="row section-intro">
 			<div class="col-twelve">
 				<h5>Contact</h5>
@@ -190,20 +205,16 @@
 	<!-- Footer -->
 	<footer>
 		<div class="row">
-
 			<div class="col-six tab-full pull-right social">
-
 				<ul class="footer-social">
 					<li><a href="https://www.facebook.com/vianjeromeirayos"><i class="fa fa-facebook"></i></a></li>
 					<li><a class="mailTo"><i class="fa fa-envelope"></i></a></li>
 					<li><a class="telephoneTo"><i class="fa fa-phone"></i></a></li>
 				</ul>
-
 			</div>
 			<div id="go-top">
 				<a class="smoothscroll" title="Back to Top" href="#top"><i class="fa fa-long-arrow-up"></i></a>
 			</div>
-
 		</div>
 	</footer>
 

@@ -25,24 +25,23 @@
 	// nav items
 	nav.find('li a').on("click", function () {
 		toggleButton.toggleClass('is-clicked');
-		nav.fadeOut();
 	});
 
 
 	// Highlight the current section in the navigation menu
-	var sections = $("section"), navigation_links = $("#main-nav-wrap li a");
+	// var sections = $("section"), navigation_links = $("#main-nav-wrap li a");
 
-	sections.waypoint({
-		handler: function (direction) {
-			var active_section;
-			active_section = $('section#' + this.element.id);
-			if (direction === "up") active_section = active_section.prev();
-			var active_link = $('#main-nav-wrap a[href="#' + active_section.attr("id") + '"]');
-			navigation_links.parent().removeClass("current");
-			active_link.parent().addClass("current");
-		},
-		offset: '25%'
-	});
+	// sections.waypoint({
+	// 	handler: function (direction) {
+	// 		var active_section;
+	// 		active_section = $('section#' + this.element.id);
+	// 		if (direction === "up") active_section = active_section.prev();
+	// 		var active_link = $('#main-nav-wrap a[href="#' + active_section.attr("id") + '"]');
+	// 		navigation_links.parent().removeClass("current");
+	// 		active_link.parent().addClass("current");
+	// 	},
+	// 	offset: '5%'
+	// });
 
 
 	// smooth scrolling
@@ -68,13 +67,34 @@
 	var scrollSpeed = 300; // how slow/fast you want the button to scroll to top. can be a value, 'slow', 'normal' or 'fast'
 
 	// Show or hide the sticky footer button
-	jQuery(window).scroll(function () {
-		if (!($("#header-search").hasClass('is-visible'))) {
-			if (jQuery(window).scrollTop() >= pxShow) {
-				jQuery("#go-top").fadeIn(fadeInTime);
-			} else {
-				jQuery("#go-top").fadeOut(fadeOutTime);
-			}
+	$(window).scroll(function () {
+		var scrolledValue = $(window).scrollTop();
+		if (scrolledValue > 200) {
+			$('#header-container').addClass('scrolled');
+		} else {
+			$('#header-container').removeClass('scrolled');
 		}
+
+		var scrollPos = $(document).scrollTop();
+
+		$('section').each(function () {
+			var sectionOffset = $(this).offset().top - 300;
+			var sectionHeight = $(this).height();
+			var sectionId = $(this).attr('id');
+			var menuLink = $('.menu a[href="#' + sectionId + '"]');
+
+			console.log(sectionOffset, sectionHeight, sectionId)
+
+			if (scrollPos >= sectionOffset && scrollPos < sectionOffset + sectionHeight) {
+				menuLink.addClass('current');
+			} else {
+				menuLink.removeClass('current');
+			}
+		});
+	});
+
+	$('.menu-button').click(function () {
+		$('.menu').toggleClass('open');
+		$('.menu-button').toggleClass('change');
 	});
 })(jQuery);
