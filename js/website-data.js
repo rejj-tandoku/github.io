@@ -53,8 +53,8 @@ var websiteData = {
             description:
                 `<ul>
                     <li><b style="font-weight:bold">Series ID: 3847</b></li>
-                    <li><b style="font-weight:bold">Google Cloud Certified</b></li>
                     <li><b style="font-weight:bold">Certification ID: z74JZf</b></li>
+                    <li><b style="font-weight:bold">Google Cloud Certified</b></li>
                 </ul>`,
             logo: "fa fa-google"
         },
