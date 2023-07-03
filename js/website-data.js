@@ -4,10 +4,11 @@ var websiteData = {
     website: "rejj-tandoku.github.io",
     mobileNumber: "+639203287943",
     pdf: "2023-06-15 Resume.pdf",
+    facebookProfile: "https://www.facebook.com/vianjeromeirayos",
     addressHTML: "Yakal St., SGV, <br>\
 			Pamorangon, Daet, <br>\
             Camarines Norte",
-    personalDescription: "Experienced software engineer with a strong proficiency in web development technologies, adept at transforming innovative ideas into functional and visually appealing websites. Skilled in popular tools used with Javascript & PHP with a passion for clean code and user-centric design.",
+    personalDescription: "Experienced software engineer with a strong proficiency in web development technologies, adept at transforming innovative ideas into functional and visually appealing websites. Skilled in <b>popular tools</b> used with Javascript & PHP with a passion for clean code and user-centric design.",
     // value should be divisible by 5 only
     techSkills: [
         {
@@ -99,6 +100,7 @@ var loadData = function () {
     $(".mobileNumber").html(websiteData.mobileNumber);
     $(".address").html(websiteData.addressHTML);
 
+    $(".facebookTo").prop('href', websiteData.facebookProfile);
     $(".mailTo").prop('href', 'mailto:' + websiteData.email);
     $(".telephoneTo").prop('href', 'tel:' + websiteData.mobileNumber);
     $("#pdfDownload").prop('href', "resources/" + websiteData.pdf);
